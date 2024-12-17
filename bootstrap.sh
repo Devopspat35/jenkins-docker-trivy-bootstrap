@@ -7,7 +7,7 @@ sudo apt install tree nano dnf git wget rpm vim -y
 sudo apt install net-tools -y
 sudo su - ubuntu
 sudo apt remove java* -y
-sudo apt install openjdk-11-jre -y
+sudo apt install openjdk-17-jre-headless -y
 sudo apt install docker.io -y
 sudo usermod -aG docker ubuntu
 sudo systemctl start docker
@@ -19,7 +19,6 @@ foncha
 EOF
 sudo echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins
 #install jenkins on ubuntu
-sudo apt install openjdk-17-jre-headless -y
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
@@ -31,7 +30,6 @@ sudo apt-get install jenkins
 sudo dnf install jenkins -y
 sudo systemctl daemon-reload
 #start and eneble docker engine
-
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 #navigate to the opt/
