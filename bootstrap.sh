@@ -34,7 +34,7 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 #navigate to the opt/
 cd /opt
-sudo apt install maven nodejs npm -y
+sudo apt install nodejs npm -y
 #inatall trivy image scan tool
 sudo apt-get install wget apt-transport-https gnupg lsb-release
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
